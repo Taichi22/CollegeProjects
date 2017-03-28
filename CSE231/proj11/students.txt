@@ -1,0 +1,5 @@
+1	Grace    Hopper
+2	Donald   Knuth
+3	Adele    Goldberg
+4	Brian    Kernighan
+5	Barbara  Liskov

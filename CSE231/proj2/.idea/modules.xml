@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Labs/Lab00/.idea/Lab00.iml" filepath="$PROJECT_DIR$/../Labs/Lab00/.idea/Lab00.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Tests/.idea/Tests.iml" filepath="$PROJECT_DIR$/../Tests/.idea/Tests.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/proj04/.idea/proj04.iml" filepath="$USER_HOME$/PycharmProjects/proj04/.idea/proj04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../proj05/.idea/proj05.iml" filepath="$PROJECT_DIR$/../proj05/.idea/proj05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../proj06/.idea/proj06.iml" filepath="$PROJECT_DIR$/../proj06/.idea/proj06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/proj2.iml" filepath="$PROJECT_DIR$/.idea/proj2.iml" />
+    </modules>
+  </component>
+</project>
