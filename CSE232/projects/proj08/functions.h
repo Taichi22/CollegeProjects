@@ -23,6 +23,7 @@ struct Node{
   string to_string () const;
   bool equal_nodes(const Node&);
   double distance(const Node &)const;
+  Node get_node()const;
 };
 
 struct Network{
