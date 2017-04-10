@@ -1,0 +1,2 @@
+from A to B on 0
+X doesn't exist
