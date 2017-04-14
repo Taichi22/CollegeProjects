@@ -1,5 +1,5 @@
-Start:A, Finish:C, Present:A
-A: on 0 -> B, on 1 -> A
-B: on 0 -> C, on 1 -> A
-C: on 0 -> C, on 1 -> A
-
+Top1 index:6
+Top2 index:11
+Size:8
+Capacity:12
+1,2,3,4,5,6,100,0,0,0,0,200

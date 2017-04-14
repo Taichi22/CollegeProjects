@@ -1,2 +1,3 @@
-A: on 0 -> B
-X doesn't exist
+6
+6
+16

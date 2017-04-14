@@ -1,182 +1,146 @@
 #include<iostream>
 using std::cout; using std::cin; using std::endl;
-using std::ostream; using std::boolalpha;
-#include<fstream>
-using std::ifstream;
-#include<map>
-using std::map;
-#include<deque>
-using std::deque;
+using std::boolalpha;
+#include<stdexcept>
+using std::overflow_error; using std::underflow_error;
 #include<string>
 using std::string;
-#include<sstream>
-using std::istringstream;
-#include<stdexcept>
-using std::domain_error; using std::out_of_range;
-#include<iterator>
-using std::ostream_iterator;
-#include<algorithm>
-using std::copy; using std::find;
 
-#include "functions.h"
 
-int main () {
+#include "class-10.h"
+
+int main (){
   int test_no;
   cin >> test_no;
   cout << boolalpha;
 
-  switch (test_no){
+  switch(test_no){
 
-  case 1:{
-    FSA fsa;
-    string state;
-    cin >> state;
-    try{
-      fsa.add_state(state);
-      cout << "added state:"<<state<<endl;
-      // should throw
-      fsa.add_state(state);
-    }
-    catch(domain_error &e){
-      cout << e.what() <<endl;
-    }
-    cout << fsa.exists_state(state) << endl;
-    cout << fsa.exists_state("X") << endl;
+  case 1: {
+    BiStack<long> b;
+    cout << b.capacity() << endl;
+    cout << b.size() << endl;
+    cout << b.max() << endl;
     break;
   }
 
   case 2:{
-    FSA fsa;
-    string from_s, input, to_s;
-    cin >> from_s >> input >> to_s;
-    try{
-      fsa.add_state(from_s);
-      fsa.add_transition(from_s, input, to_s);
-      cout << "from "<<from_s << " to "<<input<<" on "
-	   <<input<<endl;
-
-      // should throw
-      fsa.add_transition("X", input, to_s);
-    }
-    catch(domain_error &e){
-      cout << e.what() <<endl;
-    }
+    BiStack<long> b{1,2,3,4,5,6};
+    cout << b.capacity() << endl;
+    cout << b.size() << endl;
+    cout << b.max() << endl;
     break;
   }
 
   case 3:{
-    FSA fsa;
-    string from_s, input, to_s;
-    cin >> from_s >> input >> to_s;
-    try{
-      fsa.add_state(from_s);
-      fsa.add_transition(from_s, input, to_s);
-      cin >> from_s >> input >> to_s;
-      fsa.add_transition(from_s, input, to_s);      
-      cout << fsa.transitions_to_string (from_s) << endl;
-
-      // throw
-      cout << fsa.transitions_to_string("X") << endl;
-
-    }
-    catch(domain_error &e){
-      cout << e.what() <<endl;
-    }
-    break;
-  }    
-    
-  case 4:{
-    string from_s, input, to_s;
-    cin >> from_s >> input >> to_s;
-    FSA fsa(from_s, to_s);    
-    fsa.add_state(from_s);
-    fsa.add_transition(from_s, input, to_s);
-    cin >> from_s >> input >> to_s;
-    fsa.add_transition(from_s, input, to_s);      
-
-    cout << fsa << endl;
+    BiStack<long> b{1,2,3,4,5,6};
+    cout << b << endl;
     break;
   }
 
+  case 4:{
+    BiStack<long> b{1,2,3,4,5,6};
+    cout << b.empty1() << endl;
+    cout << b.empty2() << endl;
+    break;
+  }
+    
   case 5:{
-    string fname;
-    cin >> fname;
-    ifstream fin(fname);
-    FSA fsa(fin);
-    cout << fsa << endl;
+    BiStack<long> b{1,2,3,4,5,6};
+    b.push2(200);
+    b.push1(100);
+    cout << b << endl;
     break;
   }
 
   case 6:{
-    string fname;
-    cin >> fname;
-    ifstream fin(fname);
-    FSA fsa(fin);
-    string state;
-    cin >> state;
-    
-    try{
-      cout << fsa.next(state, "0") << endl;
-
-      // should throw
-      cout << fsa.next("X", "1") << endl;
-    }
-    catch(domain_error &e){
-      cout << e.what() << endl;
-    }
+    BiStack<long> b{1,2,3,4,5,6};
+    b.push2(200);
+    b.push1(100);
+    cout << b.top1() << endl;
+    cout << b.top2() << endl;
     break;
   }
 
   case 7:{
-    string fname;
-    cin >> fname;
-    ifstream fin(fname);
-    FSA fsa(fin);
-    string state;
-    cin >> state;
-    
+    BiStack<long> b{1,2,3,4,5,6};
     try{
-      cout << fsa.next(state, "0") << endl;
-
-      // should throw
-      cout << fsa.next(state, "X") << endl;
+      cout << b.top1() << endl;
+      cout << b.top2() << endl; // should throw
     }
-    catch(domain_error &e){
+    catch (underflow_error &e){
       cout << e.what() << endl;
     }
     break;
   }
 
   case 8:{
-    string fname;
-    cin >> fname;
-    ifstream fin(fname);
-    FSA fsa(fin);
-    string input;
-    cin >> input;
-
-    bool accept;
-    accept = fsa.run(input);
-    cout << endl<< "accepted?: "<<accept << endl;
+    BiStack<long> b{1,2,3,4,5,6};
+    try{
+      b.pop1();
+      cout << b << endl;
+      b.pop2(); // should throw
+    }
+     catch (underflow_error &e){
+      cout << e.what() << endl;
+    }
     break;
   }
 
   case 9:{
-    string fname;
-    cin >> fname;
-    ifstream fin(fname);
-    FSA fsa(fin);
-    string input;
-    cin >> input;
-    
-    cout << fsa << endl;
-    bool accept;
-    accept = fsa.run(input);
-    cout << endl<< "accepted?: "<<accept << endl;
-    cout << fsa << endl;
+    BiStack<long> b1{1,2,3,4,5,6};
+    BiStack<long> b2(b1);
+    b1.push1(100);
+    b2.push2(200);
+    cout << b1 << endl;
+    cout << b2 << endl;
+    break;
+  }
+
+  case 10:{
+    BiStack<long> b1{1,2,3,4,5,6};
+    BiStack<long> b2;
+    b2 = b1;
+    b1.push1(100);
+    b2.push2(200);
+    cout << b1 << endl;
+    cout << b2 << endl;
+    break;
+  }
+
+  case 11:{
+    BiStack<string> b(4);
+    b.push1("a");
+    b.push1("b");
+    b.push2("y");
+    b.push2("z");    
+    cout << b << endl;
+    for (int i=0; i< 5; ++i)
+      b.push1(string(1,'h'+i));
+    cout << b << endl;
+    break;
+  }
+
+  case 12:{
+    BiStack<string> b(4,8);
+    b.push1("a");
+    b.push1("b");
+    b.push2("y");
+    b.push2("z");  
+    cout << b << endl;
+
+    // loop should exceed max and throw
+    try{
+      for (int i=0; i< 5; ++i)
+	b.push1(string(1,'h'+i));
+      cout << b << endl;
+    }
+    catch(overflow_error &e){
+      cout << e.what() << endl;
+    }
     break;
   }
     
-  } // of switch
-} // of main;
-
+  }
+}
+      

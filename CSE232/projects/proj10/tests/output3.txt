@@ -1,2 +1,5 @@
-A: on 0 -> B, on 1 -> A
-X doesn't exist
+Top1 index:5
+Top2 empty
+Size:6
+Capacity:6
+1,2,3,4,5,6

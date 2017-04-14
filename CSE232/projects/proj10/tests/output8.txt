@@ -1,9 +1,6 @@
-Got to:A on a 1
-Got to:A on a 1
-Got to:B on a 0
-Got to:C on a 0
-Got to:A on a 1
-Got to:B on a 0
-Got to:C on a 0
-
-accepted?: true
+Top1 index:4
+Top2 empty
+Size:5
+Capacity:6
+1,2,3,4,5,6
+underflow stack 2
