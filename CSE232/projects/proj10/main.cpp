@@ -37,13 +37,13 @@ int main (){
     cout << b << endl;
     break;
   }
-
   case 4:{
     BiStack<long> b{1,2,3,4,5,6};
     cout << b.empty1() << endl;
     cout << b.empty2() << endl;
     break;
   }
+
     
   case 5:{
     BiStack<long> b{1,2,3,4,5,6};
@@ -52,7 +52,6 @@ int main (){
     cout << b << endl;
     break;
   }
-
   case 6:{
     BiStack<long> b{1,2,3,4,5,6};
     b.push2(200);
@@ -78,7 +77,9 @@ int main (){
     BiStack<long> b{1,2,3,4,5,6};
     try{
       b.pop1();
+//      cout << 1 << endl;
       cout << b << endl;
+//      cout << "out" << endl;
       b.pop2(); // should throw
     }
      catch (underflow_error &e){
@@ -140,7 +141,6 @@ int main (){
     }
     break;
   }
-    
   }
 }
       
